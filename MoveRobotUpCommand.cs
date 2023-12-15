@@ -9,7 +9,7 @@ internal class MoveRobotUpCommand : IRobotCommand
             return;
 
         int y = robot.Y - 1;
-        if (field.Cells[robot.X, y] != 2)
+        if (field.Cells[robot.X, y] == 1 || field.Cells[robot.X, y] == 4)
         {
             field.DrawCleanField(robot.X, robot.Y);
             robot.Y = y;

@@ -43,6 +43,7 @@ internal class RobotCommander : ICommander
             }
         }
         Console.Title = "Gameover";
+        Console.WriteLine("Gameover");
     }
 }
 
