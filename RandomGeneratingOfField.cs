@@ -13,35 +13,32 @@ public class RandomGeneratingOfField
     }
 
     Random random = new Random();
-    string[] result = new string[25]; // массив для поля (очень важная штука, удаление которой всё ломает)
+    string number = ""; // очень важная штука, удаление которой всё ломает
+    int count3 = 0, count4  = 0;
 
-    Dictionary<string, int> genIskl = new Dictionary<string, int>();
-
-    public string[] Random()
+    public string Random()
     {
-        genIskl.Add("samurai", 1);
-        genIskl.Add("walls", 4);
-        genIskl.Add("finish", 1);
-
         for (int i = 0; i < 25; i++)
         {
-            result[i] = random.Next(0,5).ToString();
-            switch (result[i])
+            int digit = random.Next(1, 5);
+
+            if (digit == 3 && count3 < 1)
             {
-                case "3":
-                    genIskl["samurai"]--;
-                break;
-
-                case "2":
-                    genIskl["walls"]--;
-                break;
-
-                case "4":
-                    genIskl["finish"]--;
-                break;
+                number += digit;
+                count3++;
             }
+            else if (digit == 4 && count4 < 1)
+            {
+                number += digit;
+                count4++;
+            }
+            else if (digit != 3 && digit != 4)
+            {
+                number += digit;
+            }
+            else i--;
         }
-
-        return result;
+        
+        return number;
     }
 }

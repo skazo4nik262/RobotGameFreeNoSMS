@@ -13,11 +13,11 @@ internal class Controller
 
     internal void StartListner()
     {
-        string[] firstCommands = RandomGeneratingOfField.GetInstance().Random();  //внесение данных о поле в одне строку 25 символов
+        string firstCommands = RandomGeneratingOfField.GetInstance().Random();  //внесение данных о поле в одне строку 25 символов
 
         int[] value = new int[25]; //массив куда поместится поле, которое станет двухмерным в будущем
         for(int i = 0; i < 25; i++)
-            value[i] = int.Parse(firstCommands[i]);
+            value[i] = int.Parse(firstCommands[i].ToString());
 
         mainCommander.Execute(value);   // первый запрос на 25 символов (рисование поля) передается mainCommander в метод Execute
 

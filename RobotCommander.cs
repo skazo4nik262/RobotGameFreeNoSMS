@@ -42,8 +42,10 @@ internal class RobotCommander : ICommander
                 command.Execute();
             }
         }
-        Console.Title = "Gameover";
-        Console.WriteLine("Gameover");
+
+        MainCommander mainCommander = new MainCommander();
+        Controller controller = new Controller(mainCommander);
+        controller.StartListner();
     }
 }
 
