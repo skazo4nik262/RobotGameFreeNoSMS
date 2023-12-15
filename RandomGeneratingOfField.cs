@@ -13,31 +13,35 @@ public class RandomGeneratingOfField
     }
 
     Random random = new Random();
-    int samurai = 0;
-    int field = 0;
-    int walls = 0;
-    string[] result = new string[25];
+    string[] result = new string[25]; // массив для поля (очень важная штука, удаление которой всё ломает)
+
+    Dictionary<string, int> genIskl = new Dictionary<string, int>();
 
     public string[] Random()
     {
+        genIskl.Add("samurai", 1);
+        genIskl.Add("walls", 4);
+        genIskl.Add("finish", 1);
+
         for (int i = 0; i < 25; i++)
         {
-            result[i] = random.Next(1, 5).ToString();
-
+            result[i] = random.Next(0,5).ToString();
             switch (result[i])
             {
-                case "2":
-                    walls++;
-                    break;
                 case "3":
-                    samurai++;
-                    break;
-                case "4":
-                    field++;
-                    break;
-            }
+                    genIskl["samurai"]--;
+                break;
 
+                case "2":
+                    genIskl["walls"]--;
+                break;
+
+                case "4":
+                    genIskl["finish"]--;
+                break;
+            }
         }
+
         return result;
     }
 }
