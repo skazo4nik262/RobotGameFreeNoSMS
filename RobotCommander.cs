@@ -11,12 +11,12 @@ internal class RobotCommander : ICommander
         thread.Start();
     }
 
-    public void Execute(int[] value)
+    public void Execute(int[] arrayOfDoings)
     {
-        for (int i = 0; i < value.Length; i++)
+        for (int i = 0; i < arrayOfDoings.Length; i++)
         {
 
-            switch (value[i])
+            switch (arrayOfDoings[i])
             {
                 case 1:
                     MoveRobotUpCommand up = new MoveRobotUpCommand(); robotCommands.Enqueue(up); break;
@@ -42,7 +42,7 @@ internal class RobotCommander : ICommander
     {
         while (!Field.GetInstance().CheckRobotEndGame(Robot.GetInstance(), Field.GetInstance()))
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             if (robotCommands.Count > 0)
             {
                 var command = robotCommands.Dequeue();
