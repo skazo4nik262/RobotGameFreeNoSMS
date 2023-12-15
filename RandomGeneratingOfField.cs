@@ -36,6 +36,7 @@ public class RandomGeneratingOfField
                     field++;
                     break;
             }
+
         }
         return result;
     }
