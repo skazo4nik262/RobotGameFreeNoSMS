@@ -9,23 +9,16 @@ internal class FieldCommander : ICommander
 
     public void Execute(int[] value)
     {
-        // получение ссылки на Graphics для рисования
-        Paint paint = Paint.GetInstance();
-
-        // происходит рисование поля, цифры заносятся
-        // в объект Field заносятся цифры (одномерный массив
-        // в 25 ячеек преобразовываем в двумерный массив 5х5)
-        // в объект Robot заносятся координаты
+        Paint paint = Paint.GetInstance();  // получение ссылки на Graphics для рисования
+               
         int[,] array = new int[5,5];
         int o = 0;
-        for (int i = 0; i < 5; i++)
-            for (int j = 0; j < 5; j++)
-            {
+        for (int i = 0; i < 5; i++) // происходит рисование поля, цифры заносятся в объект Field заносятся цифры
+            for (int j = 0; j < 5; j++) // (одномерный массивв 25 ячеек преобразовываем в двумерный массив 5х5)
                 array[i, j] = value[o++];
-            }
 
         Field field = Field.GetInstance();
-        field.Cells = array;
+        field.Cells = array; // в объект Field заносятся координаты
 
         for (int i = 0; i < 5; i++)
             for (int j = 0; j < 5; j++)
@@ -34,9 +27,9 @@ internal class FieldCommander : ICommander
                 switch(array[i,j])
                 {
                     case 1:
-                        brush = Brushes.Green; break;
+                        brush = Brushes.White; break;
                     case 2:
-                        brush = Brushes.Red; break;
+                        brush = Brushes.Black; break;
                     case 3:
                         Robot.GetInstance().X = i;
                         Robot.GetInstance().Y = j;
