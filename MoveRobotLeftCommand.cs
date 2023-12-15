@@ -8,7 +8,7 @@ internal class MoveRobotLeftCommand : IRobotCommand
         if (robot.X == 0)
             return;
         int x = robot.X - 1;
-        if (field.Cells[x, robot.Y] == 1)
+        if (field.Cells[x, robot.Y] != 2)
         {
             field.DrawCleanField(robot.X, robot.Y);
             robot.X = x;
