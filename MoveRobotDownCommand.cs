@@ -7,6 +7,7 @@ internal class MoveRobotDownCommand : IRobotCommand
         Field field = Field.GetInstance();
         if (robot.Y == 5)
             return;
+
         int y = robot.Y + 1;
         if (field.Cells[robot.X, y] != 2)
         {

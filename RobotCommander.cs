@@ -29,13 +29,6 @@ internal class RobotCommander : ICommander
             }
             robotCommands.Enqueue(new DrawRobotCommand());
         }
-
-
-        // массив value перебирается сначала до конца
-        // на каждую цифру создается соответствующая команда
-        // и передается в очередь выполнения команд
-        // здесь какой-нибудь switch, который по номеру создается команду
-        // можно чередовать команды движения и рисования
     }
 
     void RunCommand(object obj)

@@ -7,6 +7,7 @@ internal class MoveRobotLeftCommand : IRobotCommand
         Field field = Field.GetInstance();
         if (robot.X == 0)
             return;
+
         int x = robot.X - 1;
         if (field.Cells[x, robot.Y] != 2)
         {
