@@ -2,7 +2,7 @@
 internal class MoveRobotLeftCommand : IRobotCommand
 {
     public void Execute()
-    {// проверяем, может ли робот двигаться влево, если да, меняем ему координаты
+    {
         Robot robot = Robot.GetInstance();
         Field field = Field.GetInstance();
         if (robot.X == 0)

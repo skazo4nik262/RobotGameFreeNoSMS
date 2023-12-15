@@ -42,10 +42,8 @@ internal class RobotCommander : ICommander
                 command.Execute();
             }
         }
-
-        MainCommander mainCommander = new MainCommander();
-        Controller controller = new Controller(mainCommander);
-        controller.StartListner();
+        Console.Title = "Win";
+        Console.WriteLine("Win");
     }
 }
 

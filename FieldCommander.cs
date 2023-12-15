@@ -9,16 +9,16 @@ internal class FieldCommander : ICommander
 
     public void Execute(int[] value)
     {
-        Paint paint = Paint.GetInstance();  // получение ссылки на Graphics для рисования
+        Paint paint = Paint.GetInstance();  
                
         int[,] array = new int[5,5];
-        int o = 0;
-        for (int i = 0; i < 5; i++) // происходит рисование поля, цифры заносятся в объект Field заносятся цифры
-            for (int j = 0; j < 5; j++) // (одномерный массивв 25 ячеек преобразовываем в двумерный массив 5х5)
-                array[i, j] = value[o++];
+        int index = 0;
+        for (int i = 0; i < 5; i++) 
+            for (int j = 0; j < 5; j++) 
+                array[i, j] = value[index++];
 
         Field field = Field.GetInstance();
-        field.Cells = array; // в объект Field заносятся координаты
+        field.Cells = array; 
 
         for (int i = 0; i < 5; i++)
             for (int j = 0; j < 5; j++)

@@ -26,6 +26,7 @@ internal class Field
     {
         if (robot.X == field.X && robot.Y == field.Y)
            return true;
+           
         return false;
     }
 }

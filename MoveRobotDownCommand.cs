@@ -2,7 +2,7 @@
 internal class MoveRobotDownCommand : IRobotCommand
 {
     public void Execute()
-    {// проверяем, может ли робот двигаться вниз, если да, меняем ему координаты
+    {
         Robot robot = Robot.GetInstance();
         Field field = Field.GetInstance();
         if (robot.Y == 5)
